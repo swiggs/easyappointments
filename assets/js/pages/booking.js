@@ -712,22 +712,23 @@ App.Pages.Booking = (function () {
                     ${serviceOptionText}
                 </div> 
                 <div class="mb-2 fw-bold text-muted">
+                    <span>Associate:</span>
                     ${providerOptionText}
                 </div>
                 <div class="mb-2">
-                    <i class="fas fa-calendar-day me-2"></i>
+                    <span>Date:</span>
                     ${formattedSelectedDate}
                 </div> 
                 <div class="mb-2">
-                    <i class="fas fa-clock me-2"></i>
+                    <span>Duration:</span>
                     ${service.duration} ${lang('minutes')}
                 </div>
-                <div class="mb-2">
-                    <i class="fas fa-globe me-2"></i>
+                <div class="mb-2 d-none">
+                    <span>Timezone:</span>
                     ${timezoneOptionText}
                 </div> 
                 <div class="mb-2" ${!Number(service.price) ? 'hidden' : ''}>
-                    <i class="fas fa-cash-register me-2"></i>
+                    <span>Price:</span>
                     ${Number(service.price).toFixed(2)} ${service.currency}
                 </div>
             </div>     

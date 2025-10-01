@@ -28,13 +28,13 @@ body {
 #book-appointment-wizard {
     min-height: 480px;
     padding: 0;
-    margin: auto;
+    margin: 0 auto;
 }
 
 #book-appointment-wizard #header {
     overflow: auto;
     height: auto;
-    padding: 20px 15px;
+    padding: 40px 15px 20px 15px;
     background: #429a82;
 }
 
@@ -49,14 +49,18 @@ body {
 
     #company-logo {
         display: block;
-        margin: 14px auto;
-        max-height: 56px;
+        padding: 5px;
+        max-height: 29px;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .display-booking-selection {
         color: #225d4d;
         border-right-color: #225d4d !important;
-        font-size: 60%;
+        font-size: 67%;
         font-weight: normal;
     }
 }
@@ -86,15 +90,14 @@ body {
 
 #book-appointment-wizard .wizard-frame .frame-container {
     height: auto;
-    min-height: 500px;
+    min-height: 300px;
     padding: 15px 0;
 }
 
 #book-appointment-wizard .frame-container .frame-title {
     font-weight: lighter;
-    text-align: center;
+    text-align: left;
     margin-bottom: 30px;
-    color: #666;
 }
 
 #book-appointment-wizard .frame-container .frame-content {
@@ -117,13 +120,11 @@ body {
 }
 
 #book-appointment-wizard .wizard-frame .flatpickr-calendar {
-    margin: 25px auto;
+    margin: 0 auto 20px auto;
 }
 
 #book-appointment-wizard .wizard-frame #select-time {
-    max-width: 288px;
-    margin: auto;
-    padding: 15px 0;
+    margin: 0 auto 20px auto;
 }
 
 #book-appointment-wizard .book-step {
@@ -135,7 +136,7 @@ body {
     padding: 8px;
     margin-right: 12px;
     margin-top: 6px;
-    border-radius: 0.25rem;
+    border-radius: 0rem;
     transition: all 0.3s linear;
 }
 
@@ -154,32 +155,27 @@ body {
 
 #book-appointment-wizard .active-step {
     display: inline-block;
-    height: 45px;
-    width: 45px;
     float: left;
-    background: #fff;
-    padding: 7px;
-    margin-right: 13px;
-    margin-top: 0;
+    color: #fff !important;
+    background: #000 !important;
 }
 
 #book-appointment-wizard .active-step strong {
-    color: #429a82;
-    font-size: 21px;
+    color: #fff !important;
 }
 
 #book-appointment-wizard #frame-footer {
     padding: 15px;
     text-align: center;
-    border-top: 1px solid #ebeef1;
+    display: none;
 }
 
 #book-appointment-wizard #available-hours {
     overflow: auto;
-    margin: 15px 0;
-    padding-right: 10px;
+    margin: 2px 0 15px 0;
+    padding-right: 0px;
     width: auto;
-    max-height: 250px;
+    max-height: 600px;
 }
 
 #book-appointment-wizard #available-hours div {
@@ -204,6 +200,11 @@ body {
     margin-bottom: 15px;
 }
 
+#book-appointment-wizard #appointment-details,
+#book-appointment-wizard #customer-details {
+    padding: 0;
+}
+
 #book-appointment-wizard #appointment-details p,
 #book-appointment-wizard #customer-details p {
     font-size: 16px;
@@ -211,8 +212,8 @@ body {
 }
 
 #book-appointment-wizard #wizard-frame-1 label {
-    font-size: 19px;
-    margin-bottom: 12px;
+    font-size: 1rem;
+    margin-bottom: 8px;
 }
 
 #book-appointment-wizard #wizard-frame-1 select {
@@ -249,6 +250,9 @@ body {
     clear: both;
     max-height: 153px;
     box-shadow: none;
+    .fst-italic {
+        font-style: normal !important;
+    }
 }
 
 #book-appointment-wizard #select-language,
@@ -268,7 +272,6 @@ body {
 }
 
 #book-appointment-wizard #wizard-frame-4 .frame-container .frame-content {
-    max-width: 630px;
 }
 
 @media (min-width: 768px) {
@@ -277,9 +280,8 @@ body {
     }
 
     #book-appointment-wizard {
-        border-radius: 0.25rem;
+        border-radius: 0rem;
         overflow: hidden;
-        box-shadow: rgba(138, 195, 255, 0.12) 0 1px 5px 0;
     }
 
     #book-appointment-wizard #company-name {
@@ -297,6 +299,10 @@ body {
             margin-top: 0;
             margin-bottom: 0;
         }
+        
+        .display-booking-selection {
+            padding-top: 1.5rem;
+        }
     }
 
     #book-appointment-wizard #steps {
@@ -306,7 +312,15 @@ body {
     }
 
     #book-appointment-wizard .wizard-frame {
-        padding: 10px 20px;
+        padding: 15px;
+    }
+    
+    #book-appointment-wizard #wizard-frame-1 .frame-title {
+        max-width: 66.66%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 .25rem;
+        text-align: left;
     }
 
     #book-appointment-wizard .wizard-frame .command-buttons {
@@ -341,6 +355,7 @@ body {
     #book-appointment-wizard .footer-powered-by {
         text-align: left;
         padding: 5px 5px 5px 0;
+        display: none;
     }
 
     #book-appointment-wizard .footer-options {

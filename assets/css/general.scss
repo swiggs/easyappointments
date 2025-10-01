@@ -454,8 +454,8 @@ body .clearfix {
     .flatpickr-months {
         padding: 10px 0;
         background: #449a82;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
     }
 
     .flatpickr-current-month {
@@ -463,8 +463,8 @@ body .clearfix {
     }
 
     .flatpickr-innerContainer {
-        border-bottom-left-radius: 3px;
-        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
     }
 
     .dayContainer {

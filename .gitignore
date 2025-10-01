@@ -31,3 +31,6 @@
 /vendor/
 /metafile
 .DS_Store
+/-db
+.nova
+.htaccess

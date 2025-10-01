@@ -13,11 +13,11 @@
         <h2 class="frame-title"><?= lang('appointment_confirmation') ?></h2>
 
         <div class="row frame-content m-auto pt-md-4 mb-4">
-            <div id="appointment-details" class="col-12 col-md-6 text-center text-md-start mb-2 mb-md-0">
+            <div id="appointment-details" class="col-12 col-md-6 mb-2 mb-md-0">
                 <!-- JS -->
             </div>
 
-            <div id="customer-details" class="col-12 col-md-6 text-center text-md-end">
+            <div id="customer-details" class="col-12 col-md-6 ">
                 <!-- JS -->
             </div>
 
@@ -44,7 +44,7 @@
         <?php slot('after_captcha'); ?>
     </div>
 
-    <div class="d-flex fs-6 justify-content-around">
+    <div class="d-flex fs-5 justify-content-around">
         <?php if ($display_terms_and_conditions): ?>
             <div class="form-check mb-3">
                 <input type="checkbox" class="required form-check-input" id="accept-to-terms-and-conditions">

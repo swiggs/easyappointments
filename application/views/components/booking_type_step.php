@@ -8,7 +8,7 @@
 
 <div id="wizard-frame-1" class="wizard-frame" style="visibility: hidden;">
     <div class="frame-container">
-        <h2 class="frame-title mt-md-5"><?= lang('service_and_provider') ?></h2>
+        <h2 class="frame-title"><?= lang('service_and_provider') ?></h2>
 
         <div class="row frame-content">
             <div class="col col-md-8 offset-md-2">

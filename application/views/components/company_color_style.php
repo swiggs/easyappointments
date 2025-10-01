@@ -82,7 +82,7 @@
         /* Booking Layout */
 
         #book-appointment-wizard #header {
-            background: <?= $company_color ?>;
+            background: inherit;
         }
 
         #book-appointment-wizard #company-name .display-selected-service,
@@ -93,7 +93,9 @@
         }
 
         #book-appointment-wizard .book-step {
-            background: <?= $company_color ?>;
+            color: <?= $company_color ?>;
+            border: 1px solid <?= $company_color ?>;
+            background-color: inherit;
             filter: brightness(75%);
         }
 
@@ -150,7 +152,8 @@
         /* Backend Layout */
 
         #header {
-            background-color: <?= $company_color ?> !important;
+            background-color: inherit;
+            color: <?= $company_color ?> !important;
         }
 
         #header #header-menu .nav-item:hover,
