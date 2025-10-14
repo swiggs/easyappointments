@@ -158,7 +158,7 @@
 
         #header #header-menu .nav-item:hover,
         #header #header-menu .nav-item.active {
-            background: <?= $company_color ?> !important;
+            background: #fff !important;
         }
 
         #header #header-logo small {

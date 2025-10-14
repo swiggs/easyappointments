@@ -16,37 +16,34 @@
     <title>404 Page Not Found | Easy!Appointments</title>
     <style>
         #error-container {
-            background: #ffffff;
+            
+            background: #f8f6f2;
             min-width: 450px;
             max-width: 600px;
             margin: auto;
-            border: 1px solid #D0D0D0;
-            font: 13px/20px normal Helvetica, Arial, sans-serif;
-            color: #4F5155;
+            font: 16px/24px normal Helvetica, Arial, sans-serif;
+            color: #000000;
         }
 
         #error-container a {
-            color: #003399;
+            color: #000000;
+            text-decoration: underline;
             background-color: transparent;
             font-weight: normal;
         }
 
         #error-container h1 {
-            color: #444;
             background-color: transparent;
-            border-bottom: 1px solid #D0D0D0;
-            font-size: 19px;
+            font-size: 24px;
+            line-height: 1.5em;
             font-weight: normal;
-            margin: 0 0 14px 0;
+            margin: 0;
             padding: 20px;
         }
 
         #error-container code {
             font-family: Consolas, Monaco, Courier New, Courier, monospace;
             font-size: 12px;
-            background-color: #f9f9f9;
-            border: 1px solid #D0D0D0;
-            color: #002166;
             display: block;
             margin: 14px 0 14px 0;
             padding: 20px;
@@ -62,7 +59,7 @@
     padding: 0;
     margin: 0;
     display: flex;
-    background: #f5f8fa;
+    background: #f8f6f2;
 ">
 <div id="error-container">
     <h1>
@@ -70,13 +67,6 @@
     </h1>
 
     <?= $message ?>
-
-    <p>
-        <small>
-            Powered by
-            <a href="https://easyappointments.org">Easy!Appointments</a>
-        </small>
-    </p>
 </div>
 </body>
 </html>

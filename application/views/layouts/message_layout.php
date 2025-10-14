@@ -9,7 +9,7 @@
 
     <?php slot('meta'); ?>
 
-    <title><?= vars('page_title') ?> | Easy!Appointments</title>
+    <title><?= vars('page_title') . ' ' . setting('company_name') ?></title>
 
     <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/favicon.ico') ?>">
     <link rel="icon" sizes="192x192" href="<?= asset_url('assets/img/logo.png') ?>">
@@ -25,16 +25,21 @@
 </head>
 <body>
 <div id="main" class="container">
+
     <div class="row wrapper">
-        <div id="message-frame" class="col-12 border my-auto frame-container">
-
-            <?php slot('content'); ?>
-
-            <div class="mt-2">
-                <small>
-                    Powered by
-                    <a href="https://easyappointments.org">Easy!Appointments</a>
-                </small>
+        <div id="message-frame" class="col-12 col-lg-10 col-xl-8 col-xxl-7 mx-auto">
+            
+            <div id="header" class="mb-5">
+              <div id="company-logo">
+                <a href="<?= setting('company_link') ?>"><img src="<?= setting('company_logo') ?>" alt="logo" id="company-logo">
+                </a>
+              </div>
+            </div>
+            
+            <div class="row frame-content">
+              <div class="col col-md-8 offset-md-2">
+                <?php slot('content'); ?>
+              </div>
             </div>
 
         </div>

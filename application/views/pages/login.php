@@ -36,7 +36,6 @@
         <a href="<?= site_url('recovery') ?>" class="forgot-password"><?= lang('forgot_your_password') ?></a>
 
         <button type="submit" id="login" class="btn btn-primary">
-            <i class="fas fa-sign-in-alt me-2"></i>
             <?= lang('login') ?>
         </button>
     </div>

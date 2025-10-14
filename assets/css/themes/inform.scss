@@ -53,10 +53,10 @@ $cyan: #1f9bcf !default;
 
 $primary: #000000 !default;
 $secondary: $white !default;
-$success: $green !default;
-$info: $cyan !default;
-$warning: $yellow !default;
-$danger: $red !default;
+$success: $black !default;
+$info: $black !default;
+$warning: $black !default;
+$danger: $black !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
 
@@ -172,6 +172,21 @@ $modal-border-radius: 0 !default;
         border-width: 1px 0 0;
     }
 }
+
+// Alerts
+
+.alert-primary,
+.alert-secondary,
+.alert-success,
+.alert-info,
+.alert-warning,
+.alert-danger {
+  --bs-alert-color: var(--bs-body-color);
+  --bs-alert-bg: var(--bs-body-bg);
+  --bs-alert-border-color: var(--bs-body-color);
+  --bs-alert-link-color: var(--bs-body-color);
+}
+
 
 // Buttons
 
@@ -325,6 +340,10 @@ th {
     }
 }
 
+// Tooltips
+
+$tooltip-bg: $black !default;
+
 // Forms
 
 .form-label {
@@ -333,11 +352,6 @@ th {
 
 // Inform styles 
 #header {
-  #company-name {
-    > span {
-      display: none;
-    }
-  }
 }
 #select-time .mb-3,
 label[for="select-timezone"],
@@ -394,4 +408,48 @@ body .modal-content .modal-footer {
       }
     }
   }
+}
+
+#company-logo {
+    padding: 5px;    
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    img {
+        padding: 5px;
+        width: auto;
+        height: 29px;
+        display: block;
+    }
+}
+
+#main #book-appointment-wizard #steps {
+    display: inline-flex;
+    justify-content: end;
+    overflow: auto;
+}
+
+@media (min-width: 768px) {
+    #main #book-appointment-wizard #steps {
+        float: none;
+        display: flex;
+        justify-content: end;
+    }
+}
+
+#cancel-appointment-frame,
+#delete-personal-info-frame {
+    padding: 0 15px;
+    .booking-header-bar {
+        padding: 15px;
+        border-bottom: none;
+        background: transparent;
+    }
+}
+#cancel-appointment-frame {
+    .booking-header-bar {
+        background: #000;
+        color: #fff;
+    }
 }
