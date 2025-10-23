@@ -185,6 +185,16 @@
                                 <table id="appointment-details" border="0" cellpadding="0" cellspacing="0" role="presentation" style width="100%">
                                 <tr>
                                     <td class="label" style="padding: 3px 0px; width: 50%;">
+                                      <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.3;text-align:left;color:#666666;">Appt Id</div>
+                                    </td>
+                                    <td style="padding: 3px 0px; width: 50%;">
+                                      <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.3;text-align:left;color:#000000;">
+                                        <?= e($appointment['id']) ?>
+                                      </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label" style="padding: 3px 0px; width: 50%;">
                                       <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.3;text-align:left;color:#666666;"><?= lang('service') ?></div>
                                     </td>
                                     <td style="padding: 3px 0px; width: 50%;">
@@ -204,6 +214,8 @@
                                       </div>
                                     </td>
                                 </tr>
+                                
+                                
                                 
                                 <tr>
                                     <td class="label" style="padding: 3px 0px; width: 50%;">
@@ -391,8 +403,27 @@
                               <td align="center" vertical-align="middle" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:100%;line-height:100%;">
                                   <tr>
-                                    <td align="center" bgcolor="#000000" role="presentation" style="border:none;border-radius:0px;cursor:auto;mso-padding-alt:20px 25px 20px 25px;background:#000000;" valign="middle">
-                                      <a href="<?= e($appointment_link) ?>" style="display: inline-block; background: #000000; color: #FFFFFF; font-family: Inform, Helvetica, sans-serif; font-size: 20px; font-weight: normal; line-height: 120%; letter-spacing: .04em; margin: 0; text-decoration: none; text-transform: uppercase; padding: 20px 25px 20px 25px; mso-padding-alt: 0px; border-radius: 0px;" target="_blank"><?= lang('appointment_link_title') ?></a>
+                                      <td align="center" bgcolor="#000000" role="presentation" style="border:none;border-radius:0px;cursor:auto;mso-padding-alt:20px 25px 20px 25px;background:#000000;" valign="middle">
+                                        <a href="https://staging.inform.ca/shop/services/design-consultation/?appointmentId=<?= vars('appointment_id'); ?>" style="display: inline-block; background: #000000; color: #FFFFFF; font-family: Inform, Helvetica, sans-serif; font-size: 20px; font-weight: normal; line-height: 120%; margin: 0; text-decoration: none; text-transform: uppercase; padding: 20px 25px 20px 25px; mso-padding-alt: 0px; border-radius: 0px; width: 100%;" target="_blank">Complete payment</a>
+                                      </td>
+                                    </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="vertical-align:top;padding-top:0px;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style width="100%">
+                          <tbody>
+                            <tr>
+                              <td align="center" vertical-align="middle" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:100%;line-height:100%;">
+                                  <tr>
+                                    <td align="center" bgcolor="#FFFFFF" role="presentation" style="border:none;border-radius:0px;cursor:auto;mso-padding-alt:20px 25px 20px 25px;background:#000000;" valign="middle">
+                                      <a href="<?= e($appointment_link) ?>" style="display: inline-block; background: #FFFFFF; color: #000000; font-family: Inform, Helvetica, sans-serif; font-size: 20px; font-weight: normal; line-height: 120%; margin: 0; text-decoration: none; text-transform: uppercase; padding: 20px 25px 20px 25px; mso-padding-alt: 0px; border: 1px solid #000000; border-radius: 0px; width: 100%;" target="_blank"><?= lang('appointment_link_title') ?></a>
                                     </td>
                                   </tr>
                                 </table>

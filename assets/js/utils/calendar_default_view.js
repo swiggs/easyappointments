@@ -603,6 +603,15 @@ App.Utils.CalendarDefaultView = (function () {
                 'html': [
                     $('<strong/>', {
                         'class': 'd-inline-block me-2',
+                        'text': 'ID',
+                    }),
+                    $('<span/>', {
+                        'text': info.event.extendedProps.data.id || '-',
+                    }),
+                    $('<br/>'),
+                    
+                    $('<strong/>', {
+                        'class': 'd-inline-block me-2',
                         'text': lang('start'),
                     }),
                     $('<span/>', {
