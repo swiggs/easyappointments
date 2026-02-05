@@ -515,3 +515,16 @@ body .clearfix {
 .cc-window {
     z-index: 999 !important;
 }
+
+.form-check {
+    position: relative;
+}
+.form-check-input.is-invalid:after {
+    content: 'This field is required';
+    position: absolute;
+    left: 1.35rem;
+    bottom: -1.35rem;
+    color: red;
+    min-width: 10rem;
+    font-size: .875rem;
+}

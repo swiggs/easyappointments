@@ -612,6 +612,15 @@ App.Utils.CalendarDefaultView = (function () {
                     
                     $('<strong/>', {
                         'class': 'd-inline-block me-2',
+                        'text': lang('status'),
+                    }),
+                    $('<span/>', {
+                        'text': info.event.extendedProps.data.status || '-',
+                    }),
+                    $('<br/>'),
+                    
+                    $('<strong/>', {
+                        'class': 'd-inline-block me-2',
                         'text': lang('start'),
                     }),
                     $('<span/>', {
@@ -647,14 +656,7 @@ App.Utils.CalendarDefaultView = (function () {
                     }),
                     $('<br/>'),
 
-                    $('<strong/>', {
-                        'class': 'd-inline-block me-2',
-                        'text': lang('status'),
-                    }),
-                    $('<span/>', {
-                        'text': info.event.extendedProps.data.status || '-',
-                    }),
-                    $('<br/>'),
+                    
 
                     $('<strong/>', {
                         'class': 'd-inline-block me-2',
@@ -1210,7 +1212,7 @@ App.Utils.CalendarDefaultView = (function () {
 
                 // Add appointments to calendar.
                 response.appointments.forEach((appointment) => {
-                    const title = [appointment.service.name];
+                    const title = [appointment.status, appointment.service.name];
 
                     const customerInfo = [];
 
@@ -1224,6 +1226,7 @@ App.Utils.CalendarDefaultView = (function () {
 
                     if (customerInfo.length) {
                         title.push(customerInfo.join(' '));
+                        
                     }
 
                     const appointmentEvent = {

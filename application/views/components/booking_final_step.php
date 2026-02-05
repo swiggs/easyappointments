@@ -46,8 +46,8 @@
 
     <div class="d-flex fs-5 justify-content-around">
         <?php if ($display_terms_and_conditions): ?>
-            <div class="form-check mb-3">
-                <input type="checkbox" class="required form-check-input" id="accept-to-terms-and-conditions">
+            <div class="form-check mb-4">
+                <input type="checkbox" class="required form-check-input" id="accept-to-terms-and-conditions" required>
                 <label class="form-check-label" for="accept-to-terms-and-conditions">
                     <?= strtr(lang('read_and_agree_to_terms_and_conditions'), [
                         '{$link}' => '<a href="#" data-bs-toggle="modal" data-bs-target="#terms-and-conditions-modal">',
@@ -58,7 +58,7 @@
         <?php endif; ?>
 
         <?php if ($display_privacy_policy): ?>
-            <div class="form-check mb-3">
+            <div class="form-check mb-4">
                 <input type="checkbox" class="required form-check-input" id="accept-to-privacy-policy">
                 <label class="form-check-label" for="accept-to-privacy-policy">
                     <?= strtr(lang('read_and_agree_to_privacy_policy'), [

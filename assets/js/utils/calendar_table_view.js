@@ -885,7 +885,7 @@ App.Utils.CalendarTableView = (function () {
                 continue;
             }
 
-            const title = [appointment.service.name];
+            const title = [appointment.status, appointment.service.name];
 
             const customerInfo = [];
 
@@ -899,6 +899,7 @@ App.Utils.CalendarTableView = (function () {
 
             if (customerInfo.length) {
                 title.push(customerInfo.join(' '));
+                
             }
 
             calendarEvents.push({
