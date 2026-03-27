@@ -80,11 +80,14 @@ class Ics_file
             ->setSummary($service['name'])
             ->setUid($appointment['id_caldav_calendar'] ?: $this->generate_uid($appointment['id']));
 
-        if (!empty($service['location'])) {
-            $location = new Location();
-            $location->setName((string) $service['location']);
-            $event->addLocation($location);
-        }
+        $appointment_location = trim((string) ($appointment['location'] ?? ''));
+        $virtual_location_display =
+            $appointment_location !== ''
+                ? lang('virtual_location_prefix') . $appointment_location
+                : lang('virtual_location_pending_payment');
+        $location = new Location();
+        $location->setName($virtual_location_display);
+        $event->addLocation($location);
 
         $description = [
             '',
