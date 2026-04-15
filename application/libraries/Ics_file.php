@@ -106,11 +106,7 @@ class Ics_file
             lang('city') . ': ' . $customer['city'],
             lang('zip_code') . ': ' . $customer['zip_code'],
             '',
-            lang('virtual_meeting') . ': ' . lang('virtual_call_invitation_after_payment'),
-            '',
-            lang('notes'),
-            '',
-            (string) ($appointment['notes'] ?? ''),
+            lang('virtual_call_invitation_after_payment'),
         ];
 
         $event->setDescription(implode("\\n", $description));

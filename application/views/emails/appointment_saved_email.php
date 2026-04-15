@@ -279,28 +279,12 @@
                               <?php endif; ?>
 
                                 <tr>
-                                    <td class="label" style="padding: 3px 0px; width: 50%;">
-                                      <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.3;text-align:left;color:#666666;"><?= lang('virtual_meeting') ?></div>
-                                    </td>
-                                    <td style="padding: 3px 0px; width: 50%;">
-                                      <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.3;text-align:left;color:#000000;">
+                                    <td colspan="2" style="padding: 12px 0px 3px 0px;">
+                                      <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.4;text-align:left;color:#000000;">
                                         <?= e(lang('virtual_call_invitation_after_payment')) ?>
                                       </div>
                                     </td>
                                 </tr>
-
-                              <?php if (!empty($appointment['notes'])): ?>
-                                <tr>
-                                    <td class="label" style="padding: 3px 0px; width: 50%;">
-                                      <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.3;text-align:left;color:#666666;"><?= lang('notes') ?></div>
-                                    </td>
-                                    <td style="padding: 3px 0px; width: 50%;">
-                                      <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.3;text-align:left;color:#000000;">
-                                        <?= e($appointment['notes']) ?>
-                                      </div>
-                                    </td>
-                                </tr>
-                              <?php endif; ?>
                                 
 
                               </td>
