@@ -411,7 +411,9 @@
                                   <tr>
                                       <td align="center" bgcolor="#000000" role="presentation" style="border:none;border-radius:0px;cursor:auto;mso-padding-alt:20px 25px 20px 25px;background:#000000;" valign="middle">
                                         <a href="<?= e(
-                                            'https://staging.inform.ca/shop/services/design-consultation/?appointmentId=' .
+                                            config('connected_website_url') .
+                                                config('connected_website_design_consultation_path') .
+                                                '?appointmentId=' .
                                                 rawurlencode((string) $appointment['id']),
                                         ) ?>" style="display: inline-block; background: #000000; color: #FFFFFF; font-family: Inform, Helvetica, sans-serif; font-size: 20px; font-weight: normal; line-height: 120%; margin: 0; text-decoration: none; text-transform: uppercase; padding: 20px 25px 20px 25px; mso-padding-alt: 0px; border-radius: 0px; width: 100%;" target="_blank">Complete payment</a>
                                       </td>

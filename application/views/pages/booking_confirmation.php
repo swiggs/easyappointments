@@ -15,7 +15,12 @@
     <p><?= lang('virtual_call_invitation_after_payment') ?></p>
     
     <div class="mt-4">
-        <a class="btn btn-primary d-block" href="https://staging.inform.ca/shop/services/design-consultation/?appointmentId=<?= vars('appointment_id'); ?>" target="_blank">Complete payment
+        <a class="btn btn-primary d-block" href="<?= e(
+            config('connected_website_url') .
+                config('connected_website_design_consultation_path') .
+                '?appointmentId=' .
+                rawurlencode((string) vars('appointment_id')),
+        ) ?>" target="_blank">Complete payment
             <?php //lang('go_to_booking_page') ?>
             <?php //vars('services_id'); ?>
         </a>

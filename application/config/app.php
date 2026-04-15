@@ -13,6 +13,10 @@ $config['version'] = '1.5.2'; // This must be changed manually.
 
 $config['url'] = Config::BASE_URL;
 
+$config['connected_website_url'] = rtrim(Config::CONNECTED_WEBSITE_URL, '/');
+
+$config['connected_website_design_consultation_path'] = '/shop/services/design-consultation/';
+
 $config['debug'] = Config::DEBUG_MODE;
 
 $config['cache_busting_token'] = '20260204';
