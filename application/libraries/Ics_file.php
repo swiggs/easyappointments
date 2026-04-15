@@ -107,6 +107,10 @@ class Ics_file
             lang('zip_code') . ': ' . $customer['zip_code'],
             '',
             lang('virtual_call_invitation_after_payment'),
+            '',
+            lang('notes'),
+            '',
+            (string) ($appointment['notes'] ?? ''),
         ];
 
         $event->setDescription(implode("\\n", $description));
