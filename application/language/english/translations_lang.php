@@ -25,6 +25,8 @@ $lang['virtual_meeting'] = 'Virtual Meeting';
 $lang['virtual_location'] = 'Virtual location';
 $lang['virtual_location_prefix'] = 'Virtual location: ';
 $lang['virtual_location_pending_payment'] = 'Will be provided after payment';
+$lang['virtual_call_invitation_after_payment'] =
+    'Your virtual call invitation will be sent once your payment has been completed.';
 $lang['language'] = 'Language';
 $lang['no_language'] = 'No language';
 $lang['fields_are_required'] = 'Fields with * are required.';

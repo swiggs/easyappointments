@@ -283,20 +283,14 @@
                                 </tr>
                               <?php endif; ?>
 
-                              <?php if (!empty(trim((string) ($provider['notes'] ?? '')))): ?>
                                 <tr>
-                                    <td class="label" style="padding: 3px 0px; width: 50%;">
-                                      <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.3;text-align:left;color:#666666;"><?= lang('virtual_meeting') ?></div>
-                                    </td>
-                                    <td style="padding: 3px 0px; width: 50%;">
-                                      <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.3;text-align:left;color:#000000;">
-                                        <?= e($provider['notes']) ?>
+                                    <td colspan="2" style="padding: 12px 0px 3px 0px;">
+                                      <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.4;text-align:left;color:#000000;">
+                                        <?= e(lang('virtual_call_invitation_after_payment')) ?>
                                       </div>
                                     </td>
                                 </tr>
-                              <?php endif; ?>
-                                  
-                              
+
                               <?php if (!empty($appointment['notes'])): ?>
                                 <tr>
                                     <td class="label" style="padding: 3px 0px; width: 50%;">
@@ -309,7 +303,6 @@
                                     </td>
                                 </tr>
                               <?php endif; ?>
-                                
 
                               </td>
                             </tr>
@@ -422,22 +415,12 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:100%;line-height:100%;">
                                   <tr>
                                       <td align="center" bgcolor="#000000" role="presentation" style="border:none;border-radius:0px;cursor:auto;mso-padding-alt:20px 25px 20px 25px;background:#000000;" valign="middle">
-                                        <?php
-                                        $inform_craft_checkout_base = 'https://staging.inform.ca/shop/services/design-consultation/';
-                                        $inform_craft_checkout_href =
-                                            $inform_craft_checkout_base .
-                                            '?' .
-                                            http_build_query(
-                                                [
-                                                    'appointmentId' => $appointment['id'],
-                                                    'googleCalendarUrl' => $add_to_google_url,
-                                                ],
-                                                '',
-                                                '&',
-                                                PHP_QUERY_RFC3986,
-                                            );
-                                        ?>
-                                        <a href="<?= e($inform_craft_checkout_href) ?>" style="display: inline-block; background: #000000; color: #FFFFFF; font-family: Inform, Helvetica, sans-serif; font-size: 20px; font-weight: normal; line-height: 120%; margin: 0; text-decoration: none; text-transform: uppercase; padding: 20px 25px 20px 25px; mso-padding-alt: 0px; border-radius: 0px; width: 100%;" target="_blank">Complete payment</a>
+                                        <a href="<?= e(
+                                            config('connected_website_url') .
+                                                config('connected_website_design_consultation_path') .
+                                                '?appointmentId=' .
+                                                rawurlencode((string) $appointment['id']),
+                                        ) ?>" style="display: inline-block; background: #000000; color: #FFFFFF; font-family: Inform, Helvetica, sans-serif; font-size: 20px; font-weight: normal; line-height: 120%; margin: 0; text-decoration: none; text-transform: uppercase; padding: 20px 25px 20px 25px; mso-padding-alt: 0px; border-radius: 0px; width: 100%;" target="_blank">Complete payment</a>
                                       </td>
                                     </tr>
                                 </table>

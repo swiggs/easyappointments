@@ -34,6 +34,12 @@ class Config
     const LANGUAGE = 'english';
     const DEBUG_MODE = false;
 
+    /**
+     * Public URL of the main / e-commerce site linked from this scheduler (no trailing slash).
+     * Used for checkout and other deep links into the connected website.
+     */
+    const CONNECTED_WEBSITE_URL = 'https://example.com';
+
     // ------------------------------------------------------------------------
     // DATABASE SETTINGS
     // ------------------------------------------------------------------------

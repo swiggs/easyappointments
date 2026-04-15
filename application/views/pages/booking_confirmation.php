@@ -11,21 +11,16 @@
 
     <p>We look forward to collaborating with you.</p>
     <p>&mdash; Inform Design Team</p>
+
+    <p><?= lang('virtual_call_invitation_after_payment') ?></p>
     
-    <?php
-    $informCraftCheckoutBase = 'https://staging.inform.ca/shop/services/design-consultation/';
-    $informCraftCheckoutQuery = http_build_query(
-        [
-            'appointmentId' => vars('appointment_id'),
-            'googleCalendarUrl' => vars('add_to_google_url'),
-        ],
-        '',
-        '&',
-        PHP_QUERY_RFC3986,
-    );
-    ?>
     <div class="mt-4">
-        <a class="btn btn-primary d-block" href="<?= e($informCraftCheckoutBase . '?' . $informCraftCheckoutQuery) ?>" target="_blank">Complete payment
+        <a class="btn btn-primary d-block" href="<?= e(
+            config('connected_website_url') .
+                config('connected_website_design_consultation_path') .
+                '?appointmentId=' .
+                rawurlencode((string) vars('appointment_id')),
+        ) ?>" target="_blank">Complete payment
             <?php //lang('go_to_booking_page') ?>
             <?php //vars('services_id'); ?>
         </a>
