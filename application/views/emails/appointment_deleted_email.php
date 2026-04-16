@@ -227,7 +227,7 @@
                               
                               <?php
                               $appointment_location = trim((string) ($appointment['location'] ?? ''));
-                              ?>
+git                               ?>
                               <?php if ($appointment_location !== ''): ?>
                                 <tr>
                                     <td class="label" style="padding: 3px 0px; width: 50%;">
