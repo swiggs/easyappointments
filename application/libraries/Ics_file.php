@@ -84,7 +84,7 @@ class Ics_file
         $virtual_location_display =
             $appointment_location !== ''
                 ? lang('virtual_location_prefix') . $appointment_location
-                : lang('virtual_location_pending_payment');
+                : lang('virtual_call_invitation_after_payment');
         $location = new Location();
         $location->setName($virtual_location_display);
         $event->addLocation($location);
@@ -108,13 +108,17 @@ class Ics_file
             lang('address') . ': ' . $customer['address'],
             lang('city') . ': ' . $customer['city'],
             lang('zip_code') . ': ' . $customer['zip_code'],
-            '',
-            lang('virtual_call_invitation_after_payment'),
-            '',
-            lang('notes'),
-            '',
-            (string) ($appointment['notes'] ?? ''),
         ];
+
+        if ($appointment_location !== '') {
+            $description[] = '';
+            $description[] = lang('virtual_call_invitation_after_payment');
+        }
+
+        $description[] = '';
+        $description[] = lang('notes');
+        $description[] = '';
+        $description[] = (string) ($appointment['notes'] ?? '');
 
         $event->setDescription(implode("\\n", $description));
 

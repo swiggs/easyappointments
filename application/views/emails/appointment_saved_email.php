@@ -254,21 +254,19 @@
                               
                               <?php
                               $appointment_location = trim((string) ($appointment['location'] ?? ''));
-                              $virtual_location_display =
-                                  $appointment_location !== ''
-                                      ? lang('virtual_location_prefix') . $appointment_location
-                                      : lang('virtual_location_pending_payment');
                               ?>
+                              <?php if ($appointment_location !== ''): ?>
                                 <tr>
                                     <td class="label" style="padding: 3px 0px; width: 50%;">
                                       <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.3;text-align:left;color:#666666;"><?= lang('virtual_location') ?></div>
                                     </td>
                                     <td style="padding: 3px 0px; width: 50%;">
                                       <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.3;text-align:left;color:#000000;">
-                                        <?= e($virtual_location_display) ?>
+                                        <?= e(lang('virtual_location_prefix') . $appointment_location) ?>
                                       </div>
                                     </td>
                                 </tr>
+                              <?php endif; ?>
                               
                               <?php if (!empty($service['description'])): ?>
                                 <tr>
@@ -283,6 +281,7 @@
                                 </tr>
                               <?php endif; ?>
 
+                              <?php if ($appointment_location === ''): ?>
                                 <tr>
                                     <td colspan="2" style="padding: 12px 0px 3px 0px;">
                                       <div style="font-family:Inform, Helvetica, sans-serif;font-size:16px;line-height:1.4;text-align:left;color:#000000;">
@@ -290,6 +289,7 @@
                                       </div>
                                     </td>
                                 </tr>
+                              <?php endif; ?>
 
                               <?php if (!empty($appointment['notes'])): ?>
                                 <tr>
