@@ -19,4 +19,6 @@ $config['connected_website_design_consultation_path'] = '/shop/services/design-c
 
 $config['debug'] = Config::DEBUG_MODE;
 
+$config['email_attach_ics_invite'] = Config::EMAIL_ATTACH_ICS_INVITE;
+
 $config['cache_busting_token'] = '20260204';

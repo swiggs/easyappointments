@@ -60,7 +60,7 @@ class Email_messages
      * @param string $message Email message.
      * @param string $appointment_link Appointment unique URL.
      * @param string $recipient_email Recipient email address.
-     * @param string $ics_stream ICS file contents.
+     * @param string $ics_stream ICS file contents (empty when calendar attachments are disabled in config).
      * @param string|null $timezone Custom timezone.
      *
      * @throws DateInvalidTimeZoneException
@@ -114,7 +114,11 @@ class Email_messages
 
         $php_mailer = $this->get_php_mailer($recipient_email, $subject, $html);
 
-        $php_mailer->addStringAttachment($ics_stream, 'invitation.ics', PHPMailer::ENCODING_BASE64, 'text/calendar');
+        $attach_ics = filter_var(config('email_attach_ics_invite', true), FILTER_VALIDATE_BOOLEAN);
+
+        if ($attach_ics && $ics_stream !== '') {
+            $php_mailer->addStringAttachment($ics_stream, 'invitation.ics', PHPMailer::ENCODING_BASE64, 'text/calendar');
+        }
 
         $php_mailer->send();
     }

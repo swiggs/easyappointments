@@ -50,6 +50,25 @@ class Config
     const DB_PASSWORD = 'password';
 
     // ------------------------------------------------------------------------
+    // EMAIL SETTINGS (application/config/email.php)
+    // ------------------------------------------------------------------------
+
+    const EMAIL_PROTOCOL = 'mail';
+    const EMAIL_SMTP_AUTH = false;
+    const EMAIL_SMTP_HOST = '';
+    const EMAIL_SMTP_USER = '';
+    const EMAIL_SMTP_PASS = '';
+    const EMAIL_SMTP_PORT = 587;
+    const EMAIL_FROM_NAME = 'Easy!Appointments';
+    const EMAIL_FROM_EMAIL = 'no-reply@example.org';
+
+    /**
+     * When true, appointment notification emails include an invitation.ics calendar attachment.
+     * Set to false to send HTML-only booking emails (no .ics file).
+     */
+    const EMAIL_ATTACH_ICS_INVITE = true;
+
+    // ------------------------------------------------------------------------
     // GOOGLE CALENDAR SYNC
     // ------------------------------------------------------------------------
 

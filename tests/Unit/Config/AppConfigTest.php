@@ -21,4 +21,9 @@ class AppConfigTest extends TestCase {
             config('connected_website_design_consultation_path'),
         );
     }
+
+    public function testEmailAttachIcsInviteMatchesRootConfig(): void
+    {
+        $this->assertSame(Config::EMAIL_ATTACH_ICS_INVITE, config('email_attach_ics_invite'));
+    }
 }

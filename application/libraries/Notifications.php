@@ -68,7 +68,11 @@ class Notifications
 
             $provider_link = site_url('calendar/reschedule/' . $appointment['hash']);
 
-            $ics_stream = $this->CI->ics_file->get_stream($appointment, $service, $provider, $customer);
+            $attach_ics_invite = filter_var(config('email_attach_ics_invite', true), FILTER_VALIDATE_BOOLEAN);
+
+            $ics_stream = $attach_ics_invite
+                ? $this->CI->ics_file->get_stream($appointment, $service, $provider, $customer)
+                : '';
 
             // Notify customer.
             $send_customer =
