@@ -25,11 +25,13 @@
             <?php //vars('services_id'); ?>
         </a>
     </div>
+    <?php /*
     <p class="mt-3 text-center">
         <a href="<?= vars('add_to_google_url') ?>" id="add-to-google-calendar" target="_blank">
             <?= lang('add_to_google_calendar') ?>
         </a>
     </p>
+    */ ?>
 </div>
 
 <?php end_section('content'); ?>
