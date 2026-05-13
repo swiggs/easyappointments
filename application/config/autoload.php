@@ -67,6 +67,7 @@ $autoload['helper'] = [
     'array',
     'asset',
     'config',
+    'connected_website',
     'date',
     'debug',
     'env',

@@ -53,6 +53,8 @@ class Webhooks_client
      */
     public function trigger(string $action, array $payload)
     {
+        $payload = $this->enrich_appointment_webhook_payload($action, $payload);
+
         $webhooks = $this->CI->webhooks_model->get();
 
         foreach ($webhooks as $webhook) {
@@ -60,6 +62,40 @@ class Webhooks_client
                 $this->call($webhook, $action, $payload);
             }
         }
+    }
+
+    /**
+     * Add associate (provider) display names for appointment webhooks consumed by external systems.
+     *
+     * @param string $action
+     * @param array $payload
+     *
+     * @return array
+     */
+    private function enrich_appointment_webhook_payload(string $action, array $payload): array
+    {
+        if ($action !== WEBHOOK_APPOINTMENT_SAVE && $action !== WEBHOOK_APPOINTMENT_DELETE) {
+            return $payload;
+        }
+
+        $provider_id = isset($payload['id_users_provider']) ? (int) $payload['id_users_provider'] : 0;
+
+        if ($provider_id <= 0) {
+            return $payload;
+        }
+
+        try {
+            $provider = $this->CI->providers_model->find($provider_id);
+        } catch (Throwable) {
+            return $payload;
+        }
+
+        $payload['associate'] = [
+            'first_name' => (string) ($provider['first_name'] ?? ''),
+            'last_name' => (string) ($provider['last_name'] ?? ''),
+        ];
+
+        return $payload;
     }
 
     /**

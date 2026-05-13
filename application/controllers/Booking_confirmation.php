@@ -54,7 +54,24 @@ class Booking_confirmation extends EA_Controller
 
         $appointment = $occurrences[0];
 
+        $associate_first_name = '';
+        $associate_last_name = '';
+
+        try {
+            $provider = $this->providers_model->find((int) $appointment['id_users_provider']);
+            $associate_first_name = (string) ($provider['first_name'] ?? '');
+            $associate_last_name = (string) ($provider['last_name'] ?? '');
+        } catch (Throwable) {
+            // Provider missing or invalid; checkout URL still works with appointment id only.
+        }
+
         $add_to_google_url = $this->google_sync->get_add_to_google_url($appointment['id']);
+
+        $design_consultation_checkout_url = design_consultation_checkout_url(
+            (int) $appointment['id'],
+            $associate_first_name,
+            $associate_last_name,
+        );
 
         html_vars([
             'page_title' => lang('success'),
@@ -65,6 +82,7 @@ class Booking_confirmation extends EA_Controller
             'add_to_google_url' => $add_to_google_url,
             'appointment_id' => $appointment['id'],
             'services_id' => $appointment['id_services'],
+            'design_consultation_checkout_url' => $design_consultation_checkout_url,
         ]);
 
         $this->load->view('pages/booking_confirmation');
